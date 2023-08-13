@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+      {name: 'Baba', id: 101, marks : 23 },
+      {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] </b>
+      <!-- Quastion No -->
+      <p><b>Q1</b> "We are interested in retrieving only the students' names; all the names should be in caps.
+        ['JOHN', 'BABA', 'YAGA', 'WICK']"</p>
+    <pre> Solved 
+      let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+      {name: 'Baba', id: 101, marks : 23 },
+      {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] 
+      
+      let result = studentRecords.map((item) => item.name.toUpperCase())
+      console.log(result)
+    </pre>
+    <p><b>Q2.</b>"Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+      [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"</p>
+    <pre>
+      let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+      {name: 'Baba', id: 101, marks : 23 },
+      {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] 
+      
+      let result = studentRecords.filter((item) => item.marks >50)
+      console.log(result)
+    
+    </pre>
+    <p><b>Q3.</b>Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</p>
+    <pre>let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+      {name: 'Baba', id: 101, marks : 23 },
+      {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] 
+      
+      let result = studentRecords.filter((item) => item.marks >50 && item.id>120)
+      console.log(result)
+
+    </pre>
+    <p><b>Q.4</b>Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students. </p>
+    <pre>let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+      {name: 'Baba', id: 101, marks : 23 },
+      {name: 'yaga', id: 200, marks : 45 },
+      {name: 'Wick', id: 115, marks : 75 } ] 
+      
+      let result = studentRecords.filter((item) => item.marks >50 && item.id>120)
+      console.log(result)</pre>
+
+      <p><b>Q.6</b>This time we are required to print the sum of marks of the students with id > 120.</p>
+      <pre>let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } ] 
+
+        let result = 0;
+        studentRecords.filter((item) =>item.id>120)
+                      .map((item) =>result=item.marks+result)
+
+        console.log(result)</pre>
+
+        <p><b>Q.7</b>This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</p>
+        <pre>
+          let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] 
+
+          let result =0;
+          let lessmarks = studentRecords.map((item) => {
+            if(item.marks < 50)
+            item.marks += 15;
+            return item
+          })
+          .map((item) => item.marks>50 ? result += item.marks: null )
+          console.log(result)</pre>
+
+          <p><b><Q.8</b>Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </p>
+          <pre>
+            let ans8 = [
+                        {name:"firstName",class:"firstClass", rollNo: 10},
+                        {name:"secondName",class:"secondName", rollNo: 20},
+                        {name:"ThirdName",class:"thirdClass", rollNo: 30},
+                        {name:"fourthName",class:"fourthClass", rollNo: 40},
+                        {name:"fithName",class:"fitthClass", rollNo: 50},
+                        {name:"sixthName",class:"sixthClass", rollNo: 60},
+                       ]
+
+                        console.log(ans8)
+          </pre>
+
+
+
+
+          <script src="script.js"></script>
+</body>
+</html>
